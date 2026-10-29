@@ -1,0 +1,40 @@
+# Build outputs and release binaries
+/build/
+/release/
+*.apk
+*.idsig
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.p12
+*.jks
+*.keystore
+*.key
+*.pem
+store-password
+# Large source materials and generated educational datasets
+/cloud-deploy/public/
+/cloud-service/
+/data-audit/
+/assets/archive/
+/assets/audio-compat/
+/assets/builtin-manifest.json
+/assets/audio-compat.json
+/assets/library-v110.sqlite
+/assets/library-manifest.json
+/assets/national/
+/assets/national-*.json
+/assets/study-data.json
+# Downloaded build utilities
+/tools/.deps/
+/tools/caddy/
+/tools/ossutil/
+# Local deployment state
+/cloud-deploy/deployment-status.json
+/server/validation.json
+资料库预览.png

@@ -1,0 +1,29 @@
+services:
+  yulin:
+    image: caddy:2.11.7-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?请在 .env 中填写服务器的 HTTPS 域名}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv/site:ro
+      - ${LIBRARY_DIR:-./data}:/srv/library:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  caddy_data:
+  caddy_config:

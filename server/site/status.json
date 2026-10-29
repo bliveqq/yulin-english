@@ -1,0 +1,8 @@
+{
+  "service": "yulin-english",
+  "release": "1.3.0",
+  "files": 2498,
+  "bytes": 4207609277,
+  "manifest": "/english/manifest.json",
+  "aiConfigured": false
+}
